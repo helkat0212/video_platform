@@ -1,0 +1,6 @@
+<h1>Payment</h1>
+<p>Amount: <%= @payment.amount %></p>
+<p>Date: <%= @payment.date %></p>
+<p>Status: <%= @payment.status %></p>
+<%= link_to 'Edit', edit_user_payment_path(@payment.user, @payment) %>
+<%= link_to 'Back', user_payments_path(@payment.user) %>

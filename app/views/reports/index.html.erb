@@ -1,0 +1,7 @@
+<h1>Reports</h1>
+<%= link_to 'New Report', new_user_report_path(current_user) %>
+<ul>
+  <% @reports.each do |report| %>
+    <li><%= link_to report.reportType, user_report_path(report.user, report) %></li>
+  <% end %>
+</ul>

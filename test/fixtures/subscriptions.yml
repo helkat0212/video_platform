@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userId: 1
+  channelId: 1
+  startDate: 2024-11-22
+  endDate: 2024-11-22
+
+two:
+  userId: 1
+  channelId: 1
+  startDate: 2024-11-22
+  endDate: 2024-11-22

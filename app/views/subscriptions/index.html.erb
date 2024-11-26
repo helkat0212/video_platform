@@ -1,0 +1,7 @@
+<h1>Subscriptions</h1>
+<%= link_to 'New Subscription', new_user_subscription_path(current_user) %>
+<ul>
+  <% @subscriptions.each do |subscription| %>
+    <li><%= link_to "Subscription to #{subscription.channel.channelName}", user_subscription_path(subscription.user, subscription) %></li>
+  <% end %>
+</ul>

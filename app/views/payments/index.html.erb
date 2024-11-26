@@ -1,0 +1,7 @@
+<h1>Payments</h1>
+<%= link_to 'New Payment', new_user_payment_path(current_user) %>
+<ul>
+  <% @payments.each do |payment| %>
+    <li><%= link_to "Payment of #{payment.amount}", user_payment_path(payment.user, payment) %></li>
+  <% end %>
+</ul>

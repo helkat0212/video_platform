@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>About This Application</h1>
+  <p>This is a video platform application where users can upload, comment, and manage videos.</p>
+  
+  <% if user_signed_in? %>
+    <nav>
+      <ul>
+        <li><%= link_to 'Home', home_path %></li>
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+  <% else %>
+    <nav>
+      <ul>
+        <li><%= link_to 'Home', home_path %></li>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+      </ul>
+    </nav>
+  <% end %>
+</body>
+</html>

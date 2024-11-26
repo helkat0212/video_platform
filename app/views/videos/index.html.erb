@@ -1,0 +1,6 @@
+<h1>Videos</h1>
+<% if current_user %>
+  <%= link_to 'New Video', new_user_video_path(current_user) %>
+<% else %>
+  <p>Please log in to create a new video.</p>
+<% end %>

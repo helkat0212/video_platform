@@ -1,0 +1,6 @@
+<h1><%= @video.title %></h1>
+<p>Description: <%= @video.description %></p>
+<p>Uploaded on: <%= @video.uploadDate %></p>
+<iframe width="560" height="315" src="<%= @video.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<%= link_to 'Edit', edit_user_video_path(@video.user, @video) %>
+<%= link_to 'Back', user_videos_path(@video.user) %>

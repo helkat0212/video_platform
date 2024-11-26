@@ -1,0 +1,11 @@
+<h1>My Subscriptions</h1>
+<ul>
+  <% @subscriptions.each do |subscription| %>
+    <li>
+      <p>Channel: <%= link_to subscription.channel.channelName, subscription.channel %></p>
+      <p>Start Date: <%= subscription.startDate %></p>
+      <p>End Date: <%= subscription.endDate %></p>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Back', channels_path %>

@@ -1,0 +1,21 @@
+<h1>Survey</h1>
+<%= form_with(url: survey_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :feedback %>
+    <%= form.text_area :feedback %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Submit' %>
+  </div>
+<% end %>

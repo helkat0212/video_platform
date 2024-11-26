@@ -1,0 +1,8 @@
+<h1><%= @channel.channelName %></h1>
+<p>Description: <%= @channel.description %></p>
+<p>Create Date: <%= @channel.createDate %></p>
+<% if user_signed_in? && !current_user.subscribed_to?(@channel) %>
+  <%= button_to 'Subscribe', subscribe_channel_path(@channel), method: :post, class: 'btn btn-primary' %>
+<% end %>
+<%= link_to 'Edit', edit_channel_path(@channel) %>
+<%= link_to 'Back', channels_path %>

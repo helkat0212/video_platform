@@ -1,0 +1,1 @@
+Rails.application.config.session_store :cookie_store, key: "_video_platform_#{Rails.env}_session"

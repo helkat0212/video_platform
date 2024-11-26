@@ -1,0 +1,15 @@
+<h1>Your Subscriptions</h1>
+
+<% if @subscriptions.any? %>
+  <ul>
+    <% @subscriptions.each do |subscription| %>
+      <li>
+        <strong><%= subscription.channel.channelName %></strong> - 
+        Start Date: <%= subscription.startDate %>, 
+        End Date: <%= subscription.endDate %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You have no subscriptions.</p>
+<% end %>
