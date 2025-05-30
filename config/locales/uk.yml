@@ -1,0 +1,7 @@
+uk:
+  hello: "Привіт"
+  users:
+    index:
+      title: "Список користувачів"
+    show:
+      title: "Користувач %{name}"

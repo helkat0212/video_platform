@@ -5,7 +5,7 @@ class CreateChannels < ActiveRecord::Migration[7.1]
       t.integer :creatorId
       t.text :description
       t.date :createDate
-
+      add_index :channels, :channelName, unique: true
       t.timestamps
     end
   end

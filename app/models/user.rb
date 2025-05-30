@@ -3,8 +3,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   # Валідації для поля userName
-  validates :userName, presence: true, uniqueness: true
-
+  validates :user_name, presence: true, uniqueness: true
+  
   # Валідації для поля email
   validates :email, presence: true, uniqueness: true
 
@@ -12,16 +12,17 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
   # Асоціації з іншими моделями
-  has_many :videos
-  has_many :comments
-  has_many :subscriptions
+  has_many :videos, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
   has_many :channels, through: :subscriptions
+  has_many :channels, foreign_key: 'creatorId', inverse_of: :creator, dependent: :destroy
 
   def subscribed_to?(channel)
     channels.include?(channel)
   end
-  has_many :payments
-  has_many :reports
+  has_many :payments, dependent: :destroy
+  has_many :reports, dependent: :destroy
 
 # Devise gem will automatically include this if your using 'devise' gem, but it's worth checking
 

@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :email, null: false
       t.string :password_digest, null: false  # Це поле обов'язкове для has_secure_password
       t.string :role
-
+      add_index :users, :userName, unique: true
       t.timestamps
     end
   end

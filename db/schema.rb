@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_26_140615) do
+ActiveRecord::Schema[7.1].define(version: 2025_05_30_173447) do
   create_table "channels", force: :cascade do |t|
-    t.string "channelName"
+    t.string "channel_name"
     t.integer "creatorId"
     t.text "description"
     t.date "createDate"
@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_26_140615) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "userName"
+    t.string "user_name"
     t.string "email"
     t.string "password"
     t.string "role"

@@ -50,6 +50,9 @@ Rails.application.routes.draw do
   resources :payments
   resources :reports
 
+  scope "(:locale)", locale: /en|uk/ do
+    
+  end
   
 
   root 'home#index'  # Define a root path if needed

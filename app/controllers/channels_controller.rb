@@ -43,7 +43,7 @@ class ChannelsController < ApplicationController
 
   def subscribe
     @channel = Channel.find(params[:id])
-    @subscription = Subscription.new(user: current_user, channel: @channel, startDate: Date.today, endDate: Date.today + 30)
+    @subscription = Subscription.new(user: current_user, channel: @channel, startDate: Time.zone.today, endDate: Time.zone.today + 30)
 
     if @subscription.save
       redirect_to @channel, notice: 'Successfully subscribed to the channel.'
