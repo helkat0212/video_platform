@@ -28,4 +28,12 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  hello: "Hello"
+  language:
+    english: "English"
+    ukrainian: "Ukrainian"
+  users:
+    login: "Login"
+    logout: "Logout"
+    register: "Sign up"
+

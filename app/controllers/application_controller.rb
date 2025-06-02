@@ -4,7 +4,13 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = session[:locale] || I18n.default_locale
+  end
+
+  def switch_locale
+    new_locale = params[:locale].to_sym
+    session[:locale] = new_locale if I18n.available_locales.include?(new_locale)
+    redirect_back(fallback_location: root_path)
   end
 
   def after_sign_in_path_for(resource)

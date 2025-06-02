@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # Home routes
   get 'home', to: 'home#index', as: 'home'
   get 'about', to: 'home#about', as: 'about'
-  
+  get '/switch_locale/:locale', to: 'application#switch_locale', as: :switch_locale
+
   # User routes
   resources :users do
     resources :channels

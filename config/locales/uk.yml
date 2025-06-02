@@ -1,7 +1,10 @@
 uk:
   hello: "Привіт"
+  language:
+    english: "Англійська"
+    ukrainian: "Українська"
   users:
-    index:
-      title: "Список користувачів"
-    show:
-      title: "Користувач %{name}"
+    login: "Увійти"
+    logout: "Вийти"
+    register: "Зареєструватись"
+
