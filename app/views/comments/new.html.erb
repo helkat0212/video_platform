@@ -1,19 +1,20 @@
 <h1>New Comment</h1>
-<%= form_with(model: [@comment.video.user, @comment.video, @comment], local: true) do |form| %>
+
+<%= form_with(model: [@video, @comment], local: true) do |form| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
       <ul>
-      <% @comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label :text %>
-    <%= form.text_area :text %>
+    <%= form.text_area :text, id: 'comment_text' %>
   </div>
 
   <div class="actions">
@@ -21,4 +22,8 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', user_video_comments_path(@comment.video.user, @comment.video) %>
+<% if @video %>
+  <%= link_to 'Back', video_path(@video, locale: I18n.locale) %>
+<% else %>
+  <%= link_to 'Back', comments_path(locale: I18n.locale) %>
+<% end %>

@@ -1,10 +1,45 @@
+# config/locales/uk.yml
 uk:
-  hello: "Привіт"
-  language:
-    english: "Англійська"
-    ukrainian: "Українська"
-  users:
-    login: "Увійти"
-    logout: "Вийти"
-    register: "Зареєструватись"
-
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Помилка валідації: %{errors}"
+        blank: "%{attribute} не може бути порожнім"
+        taken: "%{attribute} вже зайнятий"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Електронна пошта не може бути порожньою"
+              taken: "Електронна пошта вже зайнята"
+            userName:
+              blank: "Ім'я користувача не може бути порожнім"
+              taken: "Ім'я користувача вже зайняте"
+            password:
+              blank: "Пароль не може бути порожнім"
+        video:
+          attributes:
+            url:
+              blank: "URL не може бути порожнім"
+            uploadDate:
+              blank: "Дата завантаження не може бути порожньою"
+            title:
+              blank: "Назва не може бути порожньою"
+            description:
+              blank: "Опис не може бути порожнім"
+        comment:
+          attributes:
+            text:
+              blank: "Текст коментаря не може бути порожнім"
+    attributes:
+      user:
+        email: "Електронна пошта"
+        userName: "Ім'я користувача"
+        password: "Пароль"
+      video:
+        title: "Назва"
+        description: "Опис"
+        url: "URL"
+        uploadDate: "Дата завантаження"
+      comment:
+        text: "Текст"     

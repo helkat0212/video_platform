@@ -11,17 +11,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :userName %>
+    <%= form.label :userName, "User Name" %>
     <%= form.text_field :userName %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :email, t('users.email') %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
+    <%= form.label :password, t('users.password') %>
     <%= form.password_field :password %>
   </div>
 

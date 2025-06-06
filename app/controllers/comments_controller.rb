@@ -1,47 +1,31 @@
 class CommentsController < ApplicationController
-  def index
-    @comments = Comment.all
-  end
-
-  def show
-    @comment = Comment.find(params[:id])
-  end
+  before_action :set_video, only: [:new, :create]
 
   def new
-    @comment = Comment.new
+    @video = Video.find(params[:video_id])
+    @comment = @video.comments.build
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @video = Video.find(params[:video_id])
+    @comment = @video.comments.build(comment_params)
+    @comment.user = current_user
+    @comment.datePosted = Date.today
+
     if @comment.save
-      redirect_to @comment
+      redirect_to video_path(@video), notice: 'Comment was successfully created'
     else
-      render 'new'
+      render :new
     end
-  end
-
-  def edit
-    @comment = Comment.find(params[:id])
-  end
-
-  def update
-    @comment = Comment.find(params[:id])
-    if @comment.update(comment_params)
-      redirect_to @comment
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
-    redirect_to comments_path
   end
 
   private
 
+  def set_video
+    @video = Video.find(params[:video_id])
+  end
+
   def comment_params
-    params.require(:comment).permit(:user_id, :video_id, :text, :datePosted)
+    params.require(:comment).permit(:text)
   end
 end

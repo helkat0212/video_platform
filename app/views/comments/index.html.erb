@@ -1,6 +1,7 @@
 <h1>Comments</h1>
 <ul>
+  <%= render 'form', comment: @comment %>
   <% @comments.each do |comment| %>
-    <li><%= link_to comment.text, user_video_comment_path(comment.video.user, comment.video, comment) %></li>
+    <li><%= link_to comment.text, video_comment_path(comment.video, comment) %></li>
   <% end %>
 </ul>

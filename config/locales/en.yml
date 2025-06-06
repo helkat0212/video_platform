@@ -27,13 +27,52 @@
 #       "yes": yup
 #       enabled: "ON"
 
+# config/locales/en.yml
 en:
-  hello: "Hello"
-  language:
-    english: "English"
-    ukrainian: "Ukrainian"
-  users:
-    login: "Login"
-    logout: "Logout"
-    register: "Sign up"
-
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        blank: "%{attribute} can't be blank"
+        taken: "%{attribute} has already been taken"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Email can't be blank"
+              taken: "has already been taken"
+            userName:
+              blank: "User Name can't be blank"
+              taken: "has already been taken"
+            password:
+              blank: "Password can't be blank"
+        video:
+          attributes:
+            url:
+              blank: "URL can't be blank"
+            uploadDate:
+              blank: "Upload date can't be blank"
+            title:
+              blank: "Title can't be blank"
+            description:
+              blank: "Description can't be blank"
+        comment:
+          attributes:
+            text:
+              blank: "Comment text can't be blank"
+    attributes:
+      user:
+        email: "Email"
+        userName: "User Name"
+        password: "Password"
+      video:
+        title: "Title"
+        description: "Description"
+        url: "URL"
+        uploadDate: "Upload Date"
+      comment:
+        text: "Text"
+activerecord:
+    attributes:
+      comment:
+        text: "Text"
