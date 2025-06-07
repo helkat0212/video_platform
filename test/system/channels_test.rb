@@ -14,7 +14,7 @@ class ChannelsTest < ApplicationSystemTestCase
     visit channels_url
     click_on "New channel"
 
-    fill_in "Channelname", with: @channel.channelName
+    fill_in "Channelname", with: @channel.channel_name
     fill_in "Createdate", with: @channel.createDate
     fill_in "Creatorid", with: @channel.creatorId
     fill_in "Description", with: @channel.description

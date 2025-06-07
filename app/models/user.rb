@@ -1,12 +1,9 @@
 class User < ApplicationRecord
-  # Devise modules
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # Валідації для поля userName
-  validates :user_name, presence: true, uniqueness: true
-  
-  # Валідації для поля email
-  validates :email, presence: true, uniqueness: true
+
+  validates :user_name, presence: true
+  validates :email, presence: true
 
   # Валідації для пароля
   validates :password, presence: true, length: { minimum: 6 }
